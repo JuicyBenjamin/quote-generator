@@ -27,13 +27,11 @@ const formSchema = z.object({
   })
 })
 
-
 export default function Home() {
   const [quote, setQuote] = useState('Your quote here')
   const [occasion, setOccasion] = useState('Your occasion here')
 
   const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
     defaultValues: {
       quote: "",
       occasion: ""
